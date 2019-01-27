@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P40yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw=="crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha256-KXn5puMvxCw+dAYznun+drMdG1IF13agK0p/pqT9KAo=sha512-2e8qq0ETcfWRI4HJBzQiA3UoyF6tbNyG+qSaIBZLyW9Xf3sWZHN/xe9fTh1U45DpPf07yj94KsUJJJWe4Yk1A=="crossorigin="anonymous"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+    <link rel="stylesheet" href="../Dashboard/Dashboard.css">
+
+    <title>Jumbotron Template for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../../dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="jumbotron.css" rel="stylesheet">
+    <script>
+
+        $('#myTabs a[href="#profile"]').tab('show')
+    
+    </script>
+
+</head>
+
+<body>
+<script type="text/javascript" src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+<main role="main">
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+        <div class="container">
+            <h3 class="display-3">Dashboard</h3>
+            <p style="color:#005cbf">This is the dashboard for a simple Web2 project. It includes Department, Task and Employee module</p>
+        </div>
+    </div>
+    <div class="container">
+    <div>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Department</a></li>
+            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Task</a></li>
+            <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Employee</a></li>
+        </ul>
+
+        <!-- Tab panes -->
+        <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="home">
+
+                <div class="row">
+                    <div class="col-8">
+                        <h2>Department</h2>
+                        <br>
+                        <div >
+                        <label>
+                        Search:
+                        <input type="text" ng-model="search" placeholder="Search by Department Name">
+                        </label>
+                        </div>
+                        <br>
+                        <table class="dashboardDept">
+                        <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Code</th>
+                        </tr>
+                        <tr ng-repeat="department in departments | filter: search">
+                        <td>{{department.no}}</td>
+                        <td>{{department.name}}</td>
+                        <td>{{department.code}}</td>
+                        </tr>
+                        </table><br>
+                        </div>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="profile">
+                <div class="col-md-12">
+                    <h2>Tasks</h2>
+                    <br>
+                    <label>
+                        Search:
+                        <input type="text" ng-model="search" placeholder="Search by Task Tilte">
+                    </label>
+                    <table class="dashboardEmp">
+                        <tr>
+                            <th>ID</th>
+                            <th>Department ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Finished Date</th>
+                            <th>Modification Date</th>
+                            <th>CreationDate</th>
+                        </tr>
+                        <tr ng-repeat="task in tasks| filter: search">
+                            <td>{{task.no}}</td>
+                            <td>{{task.deptNo}}</td>
+                            <td>{{task.title}}</td>
+                            <td >{{task.description}}</td>
+                            <td>{{task.finishedDate}}</td>
+                            <td>{{task.modificationDate}}</td>
+                            <td>{{task.creationDate}}</td>
+
+
+
+                        </tr>
+                    </table><br>
+                </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="messages">
+                <div class="col-md-4">
+                    <h2>Employees</h2>
+                    <br>
+                    <label>
+                        Search:
+                        <input type="text" ng-model="search" placeholder="Search by FirstName">
+                    </label>
+                    <table class="dashboardEmp">
+                        <tr>
+                            <th>ID</th>
+                            <th>BirthDay</th>
+                            <th>FirstName</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>HireDate</th>
+
+
+                        </tr>
+                        <tr ng-repeat="employee in employees | filter: search">
+                            <td>{{employee.no}}</td>
+                            <td>{{employee.birthDate}}</td>
+                            <td>{{employee.firstName}}</td>
+                            <td>{{employee.lastName}}</td>
+                            <td>{{employee.gender}}</td>
+                            <td>{{employee.hireDate}}</td>
+
+                        </tr>
+                    </table><br>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+        </div>
+
+        <hr>
+
+    </div> <!-- /container -->
+
+</main>
+
+<footer class="container">
+    <p>                        &copy; Web2 Project Group 2</p>
+</footer>
+
+<!-- Bootstrap core JavaScript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../../../assets/js/vendor/popper.min.js"></script>
+<script src="../../../../dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\bin\Debug\Entrance Application.exe.config
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\bin\Debug\Entrance Application.exe
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\bin\Debug\Entrance Application.pdb
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\obj\Debug\Entrance Application.csprojResolveAssemblyReference.cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\obj\Debug\Entrance_Application.Form1.resources
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\obj\Debug\Entrance_Application.Properties.Resources.resources
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\obj\Debug\Entrance Application.csproj.GenerateResource.Cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\obj\Debug\Entrance Application.csproj.CoreCompileInputs.cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\obj\Debug\Entrance Application.exe
+D:\Work & Study\Fontys\EI2S1\PROP\Applications GUI\Entrance Application\Entrance Application\obj\Debug\Entrance Application.pdb

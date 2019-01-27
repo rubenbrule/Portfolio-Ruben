@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../Employees/Employees.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body{
+            padding: 50px;
+            left: 20px;
+            right: 30px;
+        }
+
+        #editform{
+            padding: 30px;
+        }
+        #viewTable th,#details th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #f96e5b;
+            color: white;
+        }
+        #taskTable th,#details th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color:  #f96e5b;
+            color: white;
+        }
+
+        table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            border-collapse: collapse;
+            border : cornflowerblue;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+.empImg{
+    width:100px;
+    height: 100px;
+}
+
+.heading{
+    display:inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.heading, .empImg{
+    vertical-align: top;
+}
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<div class="container">
+    <div class="col-sm-12">
+        <img class="empImg" src="../Resources/empIcon.png">
+        <h1 class="heading">Employees</h1><br>
+    </div>
+
+</div>
+
+
+
+<form name="taskform" ng-controller="employeeController">
+    <div id="editForm"ng-hide="createNew">
+        <div class="form-group">
+            <label>Employee No</label>
+            <input type="text" class="form-control" id="idTask"  aria-describedby="emailHelp"ng-model="curentEmp.no" placeholder="Employee ID" readonly>
+        </div>
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" id="titleTask"  aria-describedby="emailHelp"ng-model="curentEmp.firstName" placeholder="First Name" >
+            <!--<span ng-show="taskform.taskTitle.$touched && taskform.taskTitle.$invalid" style=" color:#f22031">Title is required.</span>-->
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control"   aria-describedby="emailHelp"ng-model="curentEmp.lastName" placeholder="Last Name">
+        </div>
+        <div class="form-group">
+        <label for="exampleFormControlInput1">BirthDay</label>
+        <input type="date" min="1950-01-01" max="1994-12-31" class="form-control"  placeholder="Creation Date" ng-model="curentEmp.birthDate">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Gender</label>
+            <select class="form-control" id="thao" ng-model="curentEmp.gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Hire Date</label>
+            <input type="date" min="1980-01-01" max="2018-02-31" class="form-control"  placeholder="Creation Date" ng-model="curentEmp.hireDate">
+        </div>
+
+    </div>
+    <button  class="btn btn-info" ng-click="createNew = !createNew "  createNew >
+        <span ng-bind="createNew ? '-' : '+'"></span> New Employee
+    </button>
+    <button type="button" ng-click="updateEmployee()" class="btn btn-warning"  ng-disabled="taskform.$invalid">Save</button> <br>
+    <div ng-show="createNew">
+        <div class="form-group">
+            <label>First Name</label>
+            <input type="text" class="form-control" id="titleTask1"  aria-describedby="emailHelp"ng-model="newEmpl.firstName" placeholder="First Name" >
+            <!--<span ng-show="taskform.taskTitle.$touched && taskform.taskTitle.$invalid" style=" color:#f22031">Title is required.</span>-->
+        </div>
+        <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" class="form-control"   aria-describedby="emailHelp"ng-model="newEmpl.lastName" placeholder="Last Name" >
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">BirthDay</label>
+            <input type="date" min="1950-01-01" max="1994-12-31" class="form-control"  placeholder="Creation Date" ng-model="newEmpl.birthDate">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Gender</label>
+            <select class="form-control" id="thao1" ng-model="newEmpl.gender">
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Hire Date</label>
+            <input type="date" min="2000-01-01" max="2030-02-31" class="form-control"  placeholder="Creation Date" ng-model="newEmpl.hireDate">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="addEmp()">Add</button>
+
+
+    </div>
+
+    </div>
+    <div class="container">
+    </div>
+    <div class="col-md-12" style="background:#fdfdfe">
+        <br>
+        <label>
+            Search:
+            <input name="nameDepart" ng-model="search">
+        </label>
+        <!-- Tasks Table-->
+        <table id="taskTable">
+            <tr>
+                <th>Employee No</th>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>BirthDay</th>
+                <th>Gender</th>
+                <th>Hire Date</th>
+                <th>Options</th>
+            </tr>
+
+            <tr ng-repeat-start="name in employees | filter: { firstName: search}">
+                <td>{{name.no}}</td>
+                <td>{{name.firstName}}</td>
+                <td>{{name.lastName}}</td>
+                <td>{{name.birthDate | date:"dd-MM-yyyy"}}</td>
+                <td>{{name.gender}}</td>
+                <td>{{name.hireDate | date:"dd-MM-yyyy"}}</td>
+                <!--Edit, Delete, View Options-->
+                <td>
+                    <a href="" ng-click="editEmployee(name.no)">Edit</a> |
+                    <a href="#!/Employees" ng-click="removeEmp(name)" style="color: #ff1115;">Delete</a> |
+                    <button  class="btn btn-info" ng-click="expanded = !expanded; MoreDetail(name.no)"  expanded >
+                        <span ng-bind="expanded ? '-' : '+'"></span>
+                    </button>
+                    <!--<a href="#!/Tasks" ng-click="selectedTask(name.tId)">View Department</a>-->
+
+
+                </td>
+            </tr>
+            <tr    ng-repeat-end ng-show="expanded" >
+                <td></td>
+                <td colspan="6">
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Department No</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+                        </tr>
+
+                        </thead>
+                        <tbody>
+                        
+                        <tr  ng-repeat="x in info.departments " >
+
+                            <td ng-bind="x.no"></td>
+                            <td ng-bind="x['fromDate']"></td>
+                            <td ng-bind="x['toDate']"></td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+
+    </div>
+
+    </div>
+    </div>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+    <!--<title>Employees</title>-->
+    <!--<link rel="stylesheet" type="text/css" href="../Employees/Employees.css">-->
+    <!--<link rel="stylesheet" href="../bower_components/bootstrap-css-only/css/bootstrap.min.css">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--</head>-->
+<!--<body>-->
+
+<!--<div class="row justify-content-md-center">-->
+    <!--<div class="col-sm-12">-->
+        <!--<img class="empImg" src="../Resources/empIcon.png">-->
+        <!--<h1 class="heading">Employees</h1><br>-->
+    <!--</div>-->
+<!--</div>-->
+<!--<div class="search">-->
+    <!--<label>-->
+        <!--Search:-->
+        <!--<input type="text" ng-model="search"><br>-->
+    <!--</label>-->
+<!--</div>-->
+
+<!--<form name="myForm" ng-controller="employeeController">-->
+
+    <!--<div class="editForm">-->
+        <!--<div class="form-group">-->
+            <!--<input type="email" class="form-control" id="idDept" aria-describedby="emailHelp" ng-model="newEmp.no" placeholder="Employee ID" readonly>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" name="EmpFname" id="empFname" placeholder="First Name" ng-model="newEmp.firstName">-->
+            <!--<span ng-show="myForm.EmpFname.$touched && myForm.EmpFname.$invalid" style=" color:#f22031">Please enter first name</span>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" name="EmpLname" id="empLname" placeholder="Last Name" ng-model="newEmp.lastName">-->
+            <!--<span ng-show="myForm.EmpLname.$touched && myForm.EmpLname.$invalid" style=" color:#f22031">Please enter last name</span>-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" name="EmpBday" id="empBday" placeholder="Birthday" ng-model="newEmp.birthDate">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" name="EmpGender" id="empGender" placeholder="Gender (M / F)" ng-model="newEmp.gender">-->
+        <!--</div>-->
+        <!--<div class="form-group">-->
+            <!--<input type="text" class="form-control" name="EmpHire" id="empHireDate" placeholder="Hire Date (yyyy-mm-dd)" ng-model="newEmp.hireDate">-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<input class="btn btn-info" type="button" value="Create" ng-click="addEmployee(newEmp.firstName, newEmp.lastName, newEmp.birthDate, newEmp.gender, newEmp.hireDate)">-->
+            <!--<input class="btn btn-warning" type="button" value="Update" ng-click="update(newEmp.no, newEmp.firstName, newEmp.lastName, newEmp.birthDate, newEmp.gender, newEmp.hireDate)">-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-12 col-md-8"><br>-->
+                <!--<table id="employees">-->
+                    <!--<tr>-->
+                        <!--<th>ID</th>-->
+                        <!--<th>First Name</th>-->
+                        <!--<th>Last Name</th>-->
+                        <!--<th>Birthday</th>-->
+                        <!--<th>Gender</th>-->
+                        <!--<th>HireDate</th>-->
+                        <!--<th>Options</th>-->
+                    <!--</tr>-->
+                    <!--<tr ng-repeat-start="employee in employees | filter: search | orderBy: employee.no">-->
+                        <!--<td>{{employee.no}}</td>-->
+                        <!--<td>{{employee.firstName}}</td>-->
+                        <!--<td>{{employee.lastName}}</td>-->
+                        <!--<td>{{employee.birthDate}}</td>-->
+                        <!--<td>{{employee.gender}}</td>-->
+                        <!--<td>{{employee.hireDate}}</td>-->
+                        <!--<td >-->
+                            <!--<a href="#!/Employees" ng-click="edit(employee.no)">Edit</a> |-->
+                            <!--<a href="#!/Employees" ng-click="remove(employee)" style="color: red;">Delete</a> |-->
+                            <!--&lt;!&ndash;<a href="#!/Employees" ng-click="getEmployee(employee.no)">View Employee</a>&ndash;&gt;-->
+                            <!--<button  class="btn btn-info" ng-click="getEmployee(employee.no); expanded = !expanded "  expanded >-->
+                                <!--<span ng-bind="expanded ? '-' : '+'"></span> Details-->
+                            <!--</button>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--<tr ng-repeat-end ng-show="expanded" ng-init="GetDept(newEmp.no)">-->
+                        <!--<td></td>-->
+                        <!--<td colspan="6">-->
+                            <!--<table class="table table-condensed table-bordered">-->
+                                <!--<thead>-->
+                                <!--<tr>-->
+                                    <!--<th>ID</th>-->
+                                    <!--<th>From Date</th>-->
+                                    <!--<th>To Date</th>-->
+                                <!--</tr>-->
+                                <!--</thead>-->
+                                <!--<tbody>-->
+                                <!--<tr ng-repeat="department in empInfo.departments">-->
+                                    <!--<td ng-bind="department.no"></td>-->
+                                    <!--<td ng-bind="department['fromDate']"></td>-->
+                                    <!--<td ng-bind="department['toDate']"></td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                <!--</table>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->

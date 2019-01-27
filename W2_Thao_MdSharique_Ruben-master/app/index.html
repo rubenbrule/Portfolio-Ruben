@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/normalize.css">
+  <link rel="stylesheet" href="bower_components/html5-boilerplate/dist/css/main.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="bower_components/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    body{
+      padding: 70px;
+    }
+  </style>
+
+
+
+
+</head>
+
+
+<body>
+<script type="text/javascript" src="bootstrap/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+
+<!--bootstrap ui-->
+
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+  <a class="navbar-brand" href="#!Dashboard">Dashboard</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#!Departments">Department <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#!Tasks">Task</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#!Employees">Employee</a>
+      </li>
+
+    </ul>
+  </div>
+</nav>
+
+<main role="main" class="container">
+
+  <div class="starter-template">
+
+    <div ng-view></div>
+  </div>
+
+</main><!-- /.container -->
+
+
+
+<!--<div class="navigation">-->
+<!--<ul class="menu">-->
+<!--&lt;!&ndash;Week2 Assignment&ndash;&gt;-->
+<!--<li><a href="#!/Departments">Departments</a></li>-->
+<!--<li><a href="#!/Tasks">Task</a></li>-->
+<!--<li><a href="#!/Employees">Employee</a></li>-->
+<!--<li><a href="#!/Dashboard">Dashboard</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--&lt;!&ndash;[if lt IE 7]>-->
+<!--<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>-->
+<!--<![endif]&ndash;&gt;-->
+
+<!--<div ng-view></div>-->
+
+<!-- In production use:
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+-->
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="app.js"></script>
+<script src="components/version/version.js"></script>
+<script src="components/version/version-directive.js"></script>
+<script src="components/version/interpolate-filter.js"></script>
+
+<!-- Week2 .js files -->
+
+<script src="Departments/DepartmentModule.js"></script>
+<script src="Employees/employeeModule.js"></script>
+<script src="Tasks/TaskModule.js"></script>
+<script src="Dashboard/DashboardModule.js"></script>
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+</body>
+</html>

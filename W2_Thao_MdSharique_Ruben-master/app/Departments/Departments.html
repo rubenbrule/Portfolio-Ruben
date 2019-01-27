@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <style>
+        body{
+            padding: 50px;
+            left: 20px;
+            right: 30px;
+        }
+
+        #editform{
+            padding: 30px;
+        }
+        #viewTable th,#details th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #f96e5b;
+            color: white;
+        }
+        #taskTable th,#details th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color:  #f96e5b;
+            color: white;
+        }
+
+        table {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            border-collapse: collapse;
+            border : cornflowerblue;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+        .deptImg{
+    width:100px;
+    height: 100px;
+}
+
+.heading{
+    display:inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.heading, .deptImg{
+    vertical-align: top;
+}
+
+
+    </style>
+</head>
+<body>
+<script type="text/javascript" src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<div class="container">
+    <div class="col-sm-12">
+        <img class="deptImg" src="../Resources/deptIcon.png">
+        <h1 class="heading">Department</h1><br>
+    </div>
+
+</div>
+
+
+<form name="taskform" ng-controller="Controller">
+    <div class="editForm" ng-hide="createNew">
+        <h2> Edit Form</h2>
+        <div class="form-group">
+            <input type="email" class="form-control" id="idDept" aria-describedby="emailHelp"ng-model="curentDept.no" placeholder="Department ID" readonly>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="nameDept" placeholder="Department Code" ng-model="curentDept.code" required="">
+            <!--<span ng-show="myform.taskTitle.$touched && myform.taskTitle.$invalid" style=" color:#f22031">Name is required.</span>-->
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="empDept" placeholder="Department Name" ng-model="curentDept.name" required="">
+            <!--<span ng-show="myform.taskStatus.$touched && myform.taskStatus.$invalid" style=" color:#f22031">Name is required.</span>-->
+        </div>
+
+
+    </div>
+    <button  class="btn btn-info" ng-click="createNew = !createNew "  createNew >
+        <span ng-bind="createNew ? '-' : '+'"></span> New Department
+    </button>
+    <button type="button" ng-click="SaveUpdate(name.no,name.code,name.name)" class="btn btn-warning"  ng-disabled="myform.$invalid">Save</button> <br>
+
+    <div  ng-show="createNew">
+        <h2> Create New Department Form</h2>
+        <div class="form-group" >
+            <label for="exampleInputEmail1">Department Code</label>
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Department code" ng-model="newDept.code">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Department Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Department Name" ng-model="newDept.name">
+        </div>
+        <div class="form-check">
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="addDept()" >Create</button>
+    </div>
+
+
+    <div class="container">
+    </div>
+    <div class="col-md-12" style="background:#fdfdfe">
+        <br>
+        <label>
+            Search:
+            <input name="nameDepart" ng-model="search">
+        </label>
+        <!-- Tasks Table-->
+        <table id="taskTable">
+            <tr>
+                <th>Department No</th>
+                <th>Department Code</th>
+                <th>Department Name</th>
+                <th>Options</th>
+            </tr>
+            <tr ng-repeat-start="name in departments | filter: search">
+                <td>{{name.no}}</td>
+                <td>{{name.code}}</td>
+                <td>{{name.name}}</td>
+                <!--Edit, Delete, View Options-->
+                <td>
+                    <a href="#!/Departments" ng-click="editDept(name.no)">Edit</a> |
+                    <a href="#!/Departments"  ng-click="remove(name)" style="color: red;">Delete</a> |
+                    <button  class="btn btn-info" ng-click="expanded = !expanded; ShowEmployee(name.no) "  expanded  >
+                        <span ng-bind="expanded ? '-' : '+'"></span>
+                    </button>
+                </td>
+            </tr>
+            <tr    ng-repeat-end ng-show="expanded" >
+                <td colspan="6">
+                    <table class="table table-condensed table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Employee No</th>
+                            <th>From Date</th>
+                            <th>To Date</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat-end ng-repeat="duma in deptInfo.employees" >
+                            <!--<tr ng-repeat-end ng-repeat="duma in name.employees track by $index" >-->
+
+                            <td ng-bind="duma.no"></td>
+                            <td ng-bind="duma['fromDate']"></td>
+                            <td ng-bind="duma['toDate']"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <br>
+
+
+    </div>
+
+    </div>
+    </div>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+    <!--<link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">-->
+    <!--<link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+
+    <!--<style>-->
+        <!--body{-->
+            <!--padding: 70px;-->
+        <!--}-->
+
+        <!--#departments th,#details th {-->
+            <!--padding-top: 12px;-->
+            <!--padding-bottom: 12px;-->
+            <!--text-align: left;-->
+            <!--background-color: #f96e5b;-->
+            <!--color: white;-->
+        <!--}-->
+        <!--table {-->
+            <!--font-family: arial, sans-serif;-->
+            <!--border-collapse: collapse;-->
+            <!--border : cornflowerblue;-->
+            <!--width: 100%;-->
+        <!--}-->
+
+        <!--td, th {-->
+            <!--border: 1px solid #dddddd;-->
+            <!--text-align: left;-->
+            <!--padding: 8px;-->
+        <!--}-->
+
+        <!--tr:nth-child(even) {-->
+            <!--background-color: #dddddd;-->
+        <!--}-->
+    <!--</style>-->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+
+<!--</head>-->
+
+<!--<body>-->
+<!--<script data-require="angular.js@1.2.28" data-semver="1.2.28" src="https://code.angularjs.org/1.2.28/angular.js"></script>-->
+<!--<script data-require="angular-resource@1.2.28" data-semver="1.2.28" src="http://code.angularjs.org/1.2.28/angular-resource.js"></script>-->
+<!--<script type="text/javascript" src="../bootstrap/js/jquery-3.3.1.min.js"></script>-->
+<!--<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>-->
+<!--<div class="container">-->
+    <!--<h1> Department</h1>-->
+    <!--<label>-->
+        <!--Search:-->
+        <!--<input name="nameDepart" ng-model="filter">-->
+    <!--</label>-->
+    <!--<br>-->
+
+<!--</div>-->
+<!--<form name="myform" ng-controller="Controller">-->
+        <!--&lt;!&ndash;Edit form&ndash;&gt;-->
+        <!--<div class="editForm" ng-hide="createNew">-->
+ <!--<h2> Edit Form</h2>-->
+            <!--<div class="form-group">-->
+                <!--<input type="email" class="form-control" id="idDept" aria-describedby="emailHelp"ng-model="curentDept.no" placeholder="Department ID" readonly>-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="nameDept" placeholder="Department Name" ng-model="curentDept.name" required="">-->
+                <!--&lt;!&ndash;<span ng-show="myform.taskTitle.$touched && myform.taskTitle.$invalid" style=" color:#f22031">Name is required.</span>&ndash;&gt;-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<input type="text" class="form-control" id="empDept" placeholder="Department Code" ng-model="curentDept.code" required="">-->
+                <!--&lt;!&ndash;<span ng-show="myform.taskStatus.$touched && myform.taskStatus.$invalid" style=" color:#f22031">Name is required.</span>&ndash;&gt;-->
+            <!--</div>-->
+
+
+        <!--</div>-->
+        <!--<button  class="btn btn-info" ng-click="createNew = !createNew "  createNew >-->
+            <!--<span ng-bind="createNew ? '-' : '+'"></span> New Department-->
+        <!--</button>-->
+        <!--<button type="button" ng-click="SaveUpdate(name.no,name.code,name.name)" class="btn btn-warning"  ng-disabled="myform.$invalid">Save</button> <br>-->
+
+        <!--<div  ng-show="createNew">-->
+            <!--<h2> Create New Department Form</h2>-->
+            <!--<div class="form-group" >-->
+                <!--<label for="exampleInputEmail1">Department Code</label>-->
+                <!--<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Department code" ng-model="newDept.code">-->
+            <!--</div>-->
+            <!--<div class="form-group">-->
+                <!--<label for="exampleInputPassword1">Department Name</label>-->
+                <!--<input type="text" class="form-control" id="exampleInputPassword1" placeholder="Department Name" ng-model="newDept.name">-->
+            <!--</div>-->
+            <!--<div class="form-check">-->
+            <!--</div>-->
+            <!--<button type="submit" class="btn btn-primary" ng-click="addDept()" >Add</button>-->
+        <!--</div>-->
+
+    <!--<br>-->
+    <!--<div class="container">-->
+        <!--<div class="row">-->
+            <!--<div class="col-12 col-md-8">-->
+                <!--<table class="table table-condensed table-bordered" id="departments">-->
+                    <!--<thead>-->
+                    <!--<tr>-->
+
+                        <!--<th>Number</th>-->
+                        <!--<th>Code</th>-->
+                        <!--<th>Name</th>-->
+                        <!--<th>Options</th>-->
+                    <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<body>-->
+                    <!--<tr ng-repeat-start="dept in departments | filter: { code: filter }">-->
+
+                        <!--<td ng-bind="dept.no"></td>-->
+                        <!--<td ng-bind="dept.code"></td>-->
+                        <!--<td ng-bind="dept.name"></td>-->
+
+                        <!--<td>-->
+                            <!--<a href="#!/Departments" ng-click="editDept(dept.no)">Edit</a> |-->
+                            <!--<a href="#!/Departments"  ng-click="remove(dept)" style="color: red;">Delete</a> |-->
+                            <!--<button  class="btn btn-info" ng-click="expanded = !expanded "  expanded  >-->
+                                <!--<span ng-bind="expanded ? '-' : '+'"></span>-->
+                            <!--</button>-->
+
+
+                        <!--</td>-->
+                    <!--</tr>-->
+
+                    <!--<tr    ng-repeat-end ng-show="expanded">-->
+                        <!--<td></td>-->
+                        <!--<td colspan="6">-->
+                            <!--<table class="table table-condensed table-bordered">-->
+                                <!--<thead>-->
+                                <!--<tr>-->
+                                    <!--<th>Employee No</th>-->
+                                    <!--<th>From Date</th>-->
+                                    <!--<th>To Date</th>-->
+                                <!--</tr>-->
+                                <!--</thead>-->
+                                <!--<tbody>-->
+                                <!--<tr  ng-repeat="employee in dept.employees track by $index">-->
+                                    <!--<td>{{employee.no}}</td>-->
+                                <!--<td ng-bind="employee['no']"></td>-->
+                                <!--<td ng-bind="employee.fromDate"></td>-->
+                                <!--<td ng-bind="employee['toDate']"></td>-->
+                                <!--</tr>-->
+                                <!--</tbody>-->
+                            <!--</table>-->
+                        <!--</td>-->
+                    <!--</tr>-->
+                    <!--</body>-->
+                <!--</table>-->
+            <!--</div>-->
+
+        <!--</div>-->
+        <!--</div>-->
+
+    <!--</div>-->
+    <!--</div>-->
+
+<!--</form>-->
+<!--</body>-->
+<!--</html>-->

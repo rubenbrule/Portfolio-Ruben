@@ -1,0 +1,38 @@
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\bin\Debug\Store Application.exe.config
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\bin\Debug\Store Application.exe
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\bin\Debug\Store Application.pdb
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.csprojResolveAssemblyReference.cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\obj\Debug\Store_Application.Form1.resources
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\obj\Debug\Store_Application.Properties.Resources.resources
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.csproj.GenerateResource.Cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.csproj.CoreCompileInputs.cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.exe
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\bin\Debug\Store Application.exe.config
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\obj\Debug\Store Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\obj\Debug\Store Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\bin\Debug\Store Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\bin\Debug\Store Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\bin\Debug\MySql.Data.dll
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\bin\Debug\MySql.Data.xml
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\obj\Debug\Store Application.csprojResolveAssemblyReference.cache
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\obj\Debug\Store_Application.Form1.resources
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\obj\Debug\Store_Application.Properties.Resources.resources
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\obj\Debug\Store Application.csproj.GenerateResource.Cache
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Store Application\Store Application\Store Application\obj\Debug\Store_Application.AdjustQuantity.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\Store Application.exe.config
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\Store Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\Store Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\MySql.Data.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\MySql.Data.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.csprojResolveAssemblyReference.cache
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store_Application.AdjustQuantity.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store_Application.Form1.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store_Application.Properties.Resources.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store Application.csproj.GenerateResource.Cache
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\Phidget22.NET.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\Phidget22.NET.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\bin\Debug\Phidget22.NET.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Store Application\Store Application\Store Application\obj\Debug\Store_Application.Login.resources

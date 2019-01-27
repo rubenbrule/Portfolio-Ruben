@@ -1,0 +1,68 @@
+.extraInfo h2{
+    font-size: 20px;
+    float: left;
+}
+
+#employees tr:nth-child(even){background-color: #f2f2f2;}
+
+#employees tr:hover {background-color: #ddd;}
+
+#employees th {
+    text-align: left;
+    background-color: #f96e5b;
+    color: white;
+}
+
+.empDetails{
+    font-size: 20px;
+    font-weight: normal;
+}
+
+table h1{
+    font-size: 20px;
+}
+
+body{
+    padding: 70px;
+}
+
+#departments th,#details th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f96e5b;
+    color: white;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    border : cornflowerblue;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.empImg{
+    width:100px;
+    height: 100px;
+}
+
+.heading{
+    display:inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.heading, .empImg{
+    vertical-align: top;
+}

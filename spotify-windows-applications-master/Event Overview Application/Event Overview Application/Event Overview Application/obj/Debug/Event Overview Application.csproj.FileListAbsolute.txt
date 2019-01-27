@@ -1,0 +1,44 @@
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.exe.config
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.exe
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.pdb
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csprojResolveAssemblyReference.cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Form1.resources
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Properties.Resources.resources
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csproj.GenerateResource.Cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csproj.CoreCompileInputs.cache
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.exe
+D:\Work & Study\Fontys\EI2S1\PROP\Applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.exe.config
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\MySql.Data.dll
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\MySql.Data.xml
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csprojResolveAssemblyReference.cache
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Form1.resources
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Properties.Resources.resources
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csproj.GenerateResource.Cache
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csproj.ResolveComReference.cache
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\Thao Nguyen\spotify-windows-applications-master-b042b8df8fb64e806252922909058e4948cae8ea\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.exe.config
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Event Overview Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\GemBox.Spreadsheet.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\MySql.Data.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\GemBox.Spreadsheet.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\MySql.Data.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csprojResolveAssemblyReference.cache
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csproj.ResolveComReference.cache
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Form1.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Properties.Resources.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.csproj.GenerateResource.Cache
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event Overview Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\itextsharp.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\itextsharp.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Login.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Zen.Barcode.Core.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\obj\Debug\Event_Overview_Application.Charts.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Event Overview Application\Event Overview Application\Event Overview Application\bin\Debug\Resources\logo.png

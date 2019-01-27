@@ -1,0 +1,52 @@
+body{
+    font-family: arial, sans-serif;
+}
+
+.heading {
+    font-size: 30px;
+}
+
+/*tables*/
+.dashboardEmp, .dashboardDept, .dashboardTasks {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.dashboardEmp td, .dashboardEmp th, .dashboardDept td, .dashboardDept th, .dashboardTasks td, .dashboardTasks th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.dashboardEmp tr:nth-child(even), .dashboardDept tr:nth-child(even), .dashboardTasks tr:nth-child(even) {background-color: #f2f2f2;}
+
+.dashboardEmp tr:hover, .dashboardDept tr:hover, .dashboardTasks tr:hover {background-color: #ddd;}
+
+.dashboardEmp th, .dashboardDept th, .dashboardTasks th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #f96e5b;
+    color: white;
+}
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    border : cornflowerblue;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+table h1{
+    font-size: 20px;
+}

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style>
+    body{
+      padding: 50px;
+      left: 20px;
+      right: 30px;
+    }
+
+    #editform{
+      padding: 30px;
+    }
+    #viewTable th,#details th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #f96e5b;
+      color: white;
+    }
+    #taskTable th,#details th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color:  #f96e5b;
+      color: white;
+    }
+
+    table {
+      font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      border-collapse: collapse;
+      border : cornflowerblue;
+      width: 100%;
+    }
+
+    td, th {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+    .taskImg{
+    width:100px;
+    height: 100px;
+}
+
+.heading{
+    display:inline-block;
+    margin-left: 10px;
+    position: relative;
+    top: 20px;
+}
+
+.heading, .taskImg{
+    vertical-align: top;
+}
+
+  </style>
+</head>
+<body>
+<script type="text/javascript" src="../bootstrap/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="bootstrap/js/bootstrap.js"></script>
+<div class="container">
+    <div class="col-sm-12">
+        <img class="taskImg" src="../Resources/taskIcon.png">
+        <h1 class="heading">Tasks</h1><br>
+    </div>
+
+</div>
+
+
+
+<form name="taskform" ng-controller="taskController">
+  <div class="editForm"ng-hide="createNew">
+    <div class="form-group">
+      <label>Task No</label>
+      <input type="text" class="form-control" id="idTask"  aria-describedby="emailHelp"ng-model="curentTask.no" placeholder="Task ID" readonly>
+      <!--<span ng-show="taskform.taskTitle.$touched && taskform.taskTitle.$invalid" style=" color:#f22031">Number is required.</span>-->
+    </div>
+    <div class="form-group">
+      <label>Task title</label>
+      <input type="text" class="form-control" id="titleTask"  aria-describedby="emailHelp"ng-model="curentTask.title" placeholder="Task Title" >
+      <!--<span ng-show="taskform.taskTitle.$touched && taskform.taskTitle.$invalid" style=" color:#f22031">Title is required.</span>-->
+    </div>
+    <div class="form-group">
+      <label>Description</label>
+      <input type="text" class="form-control"  id="noOfEmpTask" placeholder="Number of Employees" ng-model="curentTask.description" required="">
+      <!--<span ng-show="taskform.taskNoOfEmp.$touched && taskform.taskNoOfEmp.$invalid" style=" color:#f22031">No. of Emp is required.</span>-->
+    </div>
+    <div class="form-group">
+      <label>Task Status</label>
+      <input type="text" class="form-control" name="taskDeptId" id="deptIdTask" placeholder="Department ID" ng-model="curentTask.status" required="">
+      <span ng-show="taskform.taskDeptId.$touched && taskform.taskDeptId.$invalid" style=" color:#f22031">Number is required.</span>
+    </div>
+
+  </div>
+  <button  class="btn btn-info" ng-click="createNew = !createNew "  createNew >
+    <span ng-bind="createNew ? '-' : '+'"></span> New Task
+  </button>
+  <button type="button" ng-click="updateTask()" class="btn btn-warning"  ng-disabled="taskform.$invalid">Save</button> <br>
+   <div ng-show="createNew">
+    <div class="form-group" >
+      <br>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Task Tilte" ng-model="newTask.title">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Department No</label>
+      <select class="form-control" id="exampleFormControlSelect1"  ng-model="newTask.deptNo">
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+      </select>
+    </div>
+     <div class="form-group">
+       <label for="exampleFormControlSelect1">Status</label>
+       <select class="form-control" id="thao" ng-model="newTask.status">
+         <option>In Progress</option>
+         <option>Finished</option>
+         <option>Paused</option>
+       </select>
+       <label for="exampleFormControlInput1">Creation Date</label>
+       <input type="date" min="2014-01-01" max="2018-2-31" class="form-control"  placeholder="Creation Date" ng-model="newTask.creatioDate">
+       <label for="exampleFormControlInput1">Modification Date</label>
+       <input type="date" min="2014-01-01" max="2018-3-31"class="form-control"  placeholder="Modification Date" ng-model="newTask.modificationDate">
+       <label for="exampleFormControlInput1">Finished Date</label>
+       <input type="date" min="2014-01-01" max="2018-3-31" class="form-control"  placeholder="Finished Date" ng-model="newTask.finishedDate">
+     </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" ng-model="newTask.description"></textarea>
+    </div>
+     <button type="submit" class="btn btn-primary" ng-click="addTask(newTask.title,newTask.description,newTask.deptNo)" ng-disabled="thao.$invalid">Add</button>
+
+
+   </div>
+
+  </div>
+  <div class="container">
+  </div>
+  <div class="col-md-12" style="background:#fdfdfe">
+    <br>
+    <label>
+      Search:
+      <input name="nameDepart" ng-model="search">
+    </label>
+    <!-- Tasks Table-->
+    <table id="taskTable">
+      <tr>
+        <th>Task ID</th>
+        <th>Department ID</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>FinishedDate</th>
+        <th>Modification Date</th>
+        <th>Creation Date</th>
+        <th>Options</th>
+      </tr>
+      <tr ng-repeat-start="name in tasks | filter: { title: search}">
+        <td>{{name.no}}</td>
+        <td>{{name.deptNo}}</td>
+        <td>{{name.title}}</td>
+        <td>{{name.description}}</td>
+        <td>{{name.status}}</td>
+
+        <td>{{name.finishedDate| date:"dd-MM-yyyy"}}</td>
+        <td>{{name.modificationDate| date:"dd-MM-yyyy"}}</td>
+        <td>{{name.creatioDate| date:"dd-MM-yyyy"}}</td>
+
+        <!--Edit, Delete, View Options-->
+        <td>
+          <a href="#!/Tasks" ng-click="editEmployee(name.no)">Edit</a> |
+          <a href="#!/Tasks" ng-click="remove(name)" style="color: #ff1115;">Delete</a> |
+          <button  class="btn btn-info" ng-click="expanded = !expanded;ShowEmp(name.no) "  expanded >
+            <span ng-bind="expanded ? '-' : '+'"></span>
+          </button>
+          <!--<a href="#!/Tasks" ng-click="selectedTask(name.tId)">View Department</a>-->
+
+
+        </td>
+      </tr>
+      <tr    ng-repeat-end ng-show="expanded">
+        <td></td>
+        <td></td>
+        <td colspan="6">
+          <table class="table table-condensed table-bordered">
+            <thead>
+            <tr>
+              <th>Employee No</th>
+              <th>Assigned Date</th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr ng-repeat-end ng-repeat="duma in taskInfo.employees" >
+            <!--<tr ng-repeat-end ng-repeat="duma in name.employees track by $index" >-->
+
+              <td ng-bind="duma.no"></td>
+              <td ng-bind="duma.assignedDate"></td>
+            </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <br>
+
+
+  </div>
+
+  </div>
+  </div>
+</form>
+</body>
+</html>
+
+

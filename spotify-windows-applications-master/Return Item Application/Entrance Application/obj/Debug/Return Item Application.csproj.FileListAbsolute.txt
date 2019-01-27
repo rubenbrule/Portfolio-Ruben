@@ -1,0 +1,15 @@
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\Entrance Application.exe.config
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\Entrance Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\Entrance Application.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\MySql.Data.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\Phidget22.NET.dll
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\MySql.Data.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\Phidget22.NET.pdb
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\bin\Debug\Phidget22.NET.xml
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\obj\Debug\Return Item Application.csprojResolveAssemblyReference.cache
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\obj\Debug\Entrance_Application.Form1.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\obj\Debug\Entrance_Application.Login.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\obj\Debug\Entrance_Application.Properties.Resources.resources
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\obj\Debug\Return Item Application.csproj.GenerateResource.Cache
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\obj\Debug\Entrance Application.exe
+C:\Users\Thao Nguyen\spotify-windows-applications\Return Item Application\Entrance Application\obj\Debug\Entrance Application.pdb
